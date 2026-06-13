@@ -1,0 +1,248 @@
+aid: ola
+url: https://raw.githubusercontent.com/api-evangelist/ola/refs/heads/main/apis.yml
+apis:
+  - aid: ola:ola-ride-booking
+    name: Ola Ride Booking API
+    tags:
+      - Ride-Sharing
+      - Ride Booking
+      - Transportation
+      - India
+    humanURL: https://developers.olacabs.com/docs/overview
+    baseURL: https://devapi.olacabs.com
+    properties:
+      - url: https://developers.olacabs.com/docs/overview
+        type: Documentation
+      - url: https://developers.olacabs.com/docs/access-token
+        type: Authentication
+      - url: https://developers.olacabs.com/docs/ride-estimate
+        type: Documentation
+        title: Ride Availability and Estimate
+      - url: https://developers.olacabs.com/docs/cab-booking
+        type: Documentation
+        title: Ride Booking - Cab
+      - url: https://developers.olacabs.com/docs/ride-later
+        type: Documentation
+        title: Ride Later - Cab
+    description: >-
+      The Ola Ride Booking API enables affiliates and partners to let users find, book, and
+      manage Ola rides directly within their applications. It covers ride availability checks,
+      fare estimates, booking creation, and cancellation across Ola's 100+ Indian city network.
+      Access is invite-only; interested partners should contact affiliates@olacabs.com.
+  - aid: ola:ola-ride-tracking
+    name: Ola Ride Tracking API
+    tags:
+      - Ride-Sharing
+      - Driver Tracking
+      - Real-Time
+      - Transportation
+      - India
+    humanURL: https://developers.olacabs.com/docs/cab-track-ride
+    baseURL: https://devapi.olacabs.com
+    properties:
+      - url: https://developers.olacabs.com/docs/cab-track-ride
+        type: Documentation
+        title: Ride Tracking - Cab
+      - url: https://developers.olacabs.com/docs/auto-track-ride
+        type: Documentation
+        title: Ride Tracking - Auto
+      - url: https://developers.olacabs.com/docs/share
+        type: Documentation
+        title: Ola Share Ride Tracking
+      - url: https://developers.olacabs.com/docs/webhook
+        type: Documentation
+        title: Webhooks
+    description: >-
+      The Ola Ride Tracking API provides real-time location data for booked rides, including
+      driver position, ETA to pickup, and in-trip tracking. It supports webhooks for push
+      notifications on booking status changes (CALL_DRIVER, CLIENT_LOCATED, IN_PROGRESS,
+      COMPLETED) to reduce polling frequency.
+  - aid: ola:ola-ride-management
+    name: Ola Ride Management API
+    tags:
+      - Ride-Sharing
+      - Ride History
+      - Cancellation
+      - Feedback
+      - Transportation
+    humanURL: https://developers.olacabs.com/docs/overview
+    baseURL: https://devapi.olacabs.com
+    properties:
+      - url: https://developers.olacabs.com/docs/my-rides
+        type: Documentation
+        title: My Rides (Trip History)
+      - url: https://developers.olacabs.com/docs/ride-cancel
+        type: Documentation
+        title: Ride Cancellation
+      - url: https://developers.olacabs.com/docs/ride-feedback
+        type: Documentation
+        title: Ride Feedback
+      - url: https://developers.olacabs.com/docs/rate-limit
+        type: RateLimits
+    description: >-
+      The Ola Ride Management API covers post-booking operations including trip history retrieval,
+      ride cancellation with city-specific reason codes, and ride feedback submission. It enables
+      partners to surface Ola ride history and handle cancellations within their own user interfaces.
+  - aid: ola:ola-corporate
+    name: Ola Corporate API
+    tags:
+      - Corporate
+      - Enterprise
+      - B2B
+      - Employee Management
+      - Expense Management
+    humanURL: https://corporate.olacabs.com/docs/overview
+    baseURL: https://devapi.olacabs.com
+    properties:
+      - url: https://corporate.olacabs.com/docs/overview
+        type: Documentation
+      - url: https://corporate.olacabs.com/docs/access-token
+        type: Authentication
+    description: >-
+      The Ola Corporate API enables large enterprises to automate employee and expense management
+      on the Ola Corporate dashboard. It provides endpoints for user lifecycle management (add,
+      update, delete, bulk operations), ride data retrieval, invoice downloading, and expense code
+      administration. Authentication uses the X-CORPORATE-TOKEN header issued to registered partners.
+  - aid: ola:ola-maps
+    name: Ola Maps API
+    tags:
+      - Maps
+      - Geocoding
+      - Routing
+      - Places
+      - Navigation
+      - India
+    humanURL: https://maps.olakrutrim.com/docs
+    baseURL: https://api.olamaps.io
+    properties:
+      - url: https://maps.olakrutrim.com/docs
+        type: Documentation
+      - url: https://maps.olakrutrim.com/apidocs
+        type: Documentation
+        title: API Reference
+      - url: https://maps.olakrutrim.com/docs/auth
+        type: Authentication
+      - url: https://maps.olakrutrim.com/pricing
+        type: Pricing
+      - url: https://maps.olakrutrim.com/products
+        type: Features
+      - url: https://github.com/iSanjayAchar/ola-maps-node-sdk
+        type: SDK
+        title: Node.js SDK (Community)
+      - url: https://github.com/lavvsharma/py_olamaps
+        type: SDK
+        title: Python SDK (Community)
+      - url: https://pub.dev/packages/ola_maps
+        type: SDK
+        title: Flutter/Dart SDK (Community)
+    description: >-
+      Ola Maps is an AI-powered geospatial platform providing routing, geocoding, places search,
+      and map visualization APIs tuned for India. It offers Directions, Distance Matrix, Route
+      Optimizer, Fleet Planner, Snap-to-Road, Speed Limits, Autocomplete, Nearby Search, Text
+      Search, Place Details, Forward and Reverse Geocoding, and Map Tiles APIs alongside
+      Navigation, Places, and Maps SDKs for Android, iOS, and Web. Free tier includes 500K API
+      calls per month. Supports both API key and OAuth 2.0 authentication.
+name: Ola
+tags:
+  - Ride-Sharing
+  - Transportation
+  - Maps
+  - Geocoding
+  - Routing
+  - Corporate Travel
+  - India
+type: Index
+properties:
+  - url: plans/ola-plans-pricing.yml
+    type: Plans
+  - url: rate-limits/ola-rate-limits.yml
+    type: RateLimits
+  - url: finops/ola-finops.yml
+    type: FinOps
+image: https://kinlane-productions.s3.amazonaws.com/apis-json/apis-json-logo.jpg
+access: 3rd-Party
+created: '2026-06-13'
+modified: '2026-06-13'
+position: Consumer
+description: >-
+  Ola is India's leading ride-sharing and mobility platform operating across 100+ cities in India
+  and international markets. Its developer ecosystem includes partner APIs for ride booking,
+  real-time driver tracking, trip history, and corporate travel management, as well as the Ola Maps
+  geospatial platform offering AI-powered routing, geocoding, places search, and navigation SDKs
+  optimized for Indian roads and language support. Ride APIs are invite-only for affiliates; Ola
+  Maps offers a self-serve free tier.
+maintainers:
+  - FN: Kin Lane
+    email: kin@apievangelist.com
+specificationVersion: '0.19'
+common:
+  - type: Portal
+    url: https://developers.olacabs.com/
+  - type: Documentation
+    url: https://developers.olacabs.com/docs/overview
+  - type: SignUp
+    url: https://developers.olacabs.com/login
+  - type: Authentication
+    url: https://developers.olacabs.com/docs/access-token
+  - type: Webhooks
+    url: https://developers.olacabs.com/docs/webhook
+  - type: Portal
+    url: https://maps.olakrutrim.com/
+  - type: Documentation
+    url: https://maps.olakrutrim.com/docs
+  - type: Pricing
+    url: https://maps.olakrutrim.com/pricing
+  - type: Blog
+    url: https://tech.olakrutrim.com/
+  - type: Contact
+    url: mailto:affiliates@olacabs.com
+  - type: Contact
+    url: mailto:support@olakrutrim.com
+  - type: Features
+    data:
+      - name: OAuth 2.0 Authorization
+        description: >-
+          Ride APIs use OAuth 2.0 bearer tokens obtained via Ola's login/signup flow; Ola Maps
+          additionally supports API key authentication passed as a query parameter.
+      - name: Sandbox Environment
+        description: >-
+          Ola Consumer APIs offer a staging/sandbox environment (devapi-stg.olacabs-dev.in) for
+          integration testing before production go-live.
+      - name: Webhooks
+        description: >-
+          Partners can register callback URLs to receive real-time push notifications for booking
+          status transitions, reducing the need for polling the Track Ride endpoint.
+      - name: India-Optimized Maps
+        description: >-
+          Ola Maps uses anonymized fleet data from millions of Ola cabs and EV scooters to keep
+          map data and real-time traffic accurate for Indian road networks.
+      - name: Indic Language Support
+        description: >-
+          Ola Maps navigation and search APIs support 11+ Indian languages including Hindi, Tamil,
+          Telugu, Kannada, and Marathi, with localization across web and mobile SDKs.
+  - type: UseCases
+    data:
+      - name: Ride Booking Integration
+        description: >-
+          Travel, hospitality, and consumer apps embed Ola ride booking directly so their users
+          can find and book a cab without switching to the Ola app.
+      - name: Corporate Mobility Management
+        description: >-
+          HR and finance teams use the Ola Corporate API to automate employee onboarding, enforce
+          travel policies, and sync ride expense data with ERP and expense platforms.
+      - name: Logistics and Fleet Routing
+        description: >-
+          Delivery and logistics operators use Ola Maps Directions, Distance Matrix, and Route
+          Optimizer APIs to plan efficient last-mile routes across Indian cities.
+      - name: Location Search for Indian Apps
+        description: >-
+          Consumer and B2B apps use Ola Maps Places and Geocoding APIs for address autocomplete,
+          nearby business discovery, and coordinate-to-address conversion tuned for India.
+  - type: Integrations
+    data:
+      - name: Enterprise HR and ERP Systems
+        description: Ola Corporate bulk user management integrates with HR systems to sync employees and
+          expense codes automatically.
+      - name: ONDC Platform
+        description: Ola Maps offers special free-tier pricing for startups and SMBs building on the
+          Open Network for Digital Commerce (ONDC).

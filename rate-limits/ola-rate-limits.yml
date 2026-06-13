@@ -1,0 +1,98 @@
+specification: API Commons Rate Limits
+specificationVersion: '0.1'
+schema: https://raw.githubusercontent.com/api-evangelist/interface-research/main/schema/api-commons.yml#/$defs/RateLimits
+provider: Ola
+providerId: ola
+created: '2026-06-13'
+modified: '2026-06-13'
+reconciled: false
+tags:
+  - Ride-Sharing
+  - Maps
+  - Transportation
+  - Rate Limiting
+  - India
+description: >-
+  Ola enforces rate limiting across both its Ride APIs and Ola Maps platform. The Ola Corporate
+  API publishes a rate limit of 1,000 requests per minute across all endpoints. The Ola Maps
+  platform enforces monthly and per-minute rate limits returning HTTP 429 when exceeded, with
+  free tier thresholds of 500K–5M calls per month. Consumer Ride API rate limits are not publicly
+  documented and are governed by affiliate partner agreements.
+notes: >-
+  Ola Corporate rate limits (1,000 RPM) are documented at corporate.olacabs.com. Ola Maps
+  per-minute limits are enforced but specific numbers are not published; the free monthly cap is
+  500K (standard) to 5M (promotional). Consumer Ride API rate limits require a partner agreement
+  to access.
+sources:
+  - https://corporate.olacabs.com/docs/access-token
+  - https://maps.olakrutrim.com/docs
+  - https://developers.olacabs.com/docs/rate-limit
+responseCodes:
+  throttled: 429
+limits:
+  - name: Ola Corporate API Rate Limit
+    scope: account
+    metric: requests_per_minute
+    limit: 1000
+    timeFrame: minute
+    notes: >-
+      Applies across all Corporate API endpoints: user management, ride viewing, invoice
+      download, and expense code operations. Exceeding this limit returns HTTP 429 with the
+      message "Allowed rate limit breached".
+  - name: Ola Maps Monthly Free Tier Limit
+    scope: account
+    metric: api_calls_per_month
+    limit: 500000
+    timeFrame: month
+    notes: >-
+      Standard free tier is 500K API calls per month across all Ola Maps APIs. Promotional
+      tier (as of February 2025) extends this to 5M calls per month for new and existing
+      accounts. Exceeding the monthly cap returns HTTP 429.
+  - name: Ola Maps Promotional Monthly Free Tier
+    scope: account
+    metric: api_calls_per_month
+    limit: 5000000
+    timeFrame: month
+    notes: >-
+      Promotional expansion announced February 2025 covering 90%+ of Indian developers and
+      startups. Contact support@olakrutrim.com to upgrade from the standard 500K cap.
+  - name: Ola Maps Per-Minute Rate Limit
+    scope: account
+    metric: requests_per_minute
+    limit: -1
+    timeFrame: minute
+    notes: >-
+      Ola Maps enforces per-minute rate limits in addition to the monthly cap; exact per-minute
+      thresholds are not publicly documented. HTTP 429 is returned when exceeded with guidance
+      to contact support@olakrutrim.com for a free upgrade.
+  - name: Ola Ride API (Consumer/Affiliate) Rate Limit
+    scope: account
+    metric: requests
+    limit: -1
+    timeFrame: varies
+    notes: >-
+      Rate limits for the Consumer Ride APIs are not publicly disclosed. Quotas are governed
+      by the affiliate partner agreement received after certification by Ola.
+policies:
+  - name: Hard Monthly Cap (Ola Maps)
+    description: >-
+      Ola Maps enforces a hard monthly API call cap per account. Requests above the free threshold
+      are either billed (on paid plans) or rejected with HTTP 429 until the next billing cycle or
+      a plan upgrade is applied.
+  - name: Per-Minute Throttle (Ola Corporate)
+    description: >-
+      The Ola Corporate API returns HTTP 429 with "Allowed rate limit breached" when more than
+      1,000 requests are issued in any 60-second window. Clients should implement request queuing
+      or exponential backoff to stay within this limit.
+  - name: Invite-Only Access Gating (Ride APIs)
+    description: >-
+      Consumer Ride APIs are only accessible after affiliate certification; unapproved clients
+      cannot reach production endpoints regardless of rate limits.
+  - name: Exponential Backoff
+    description: >-
+      Clients hitting 429 responses on any Ola API should apply exponential backoff with jitter
+      before retrying. Contact support@olakrutrim.com (Maps) or corp_apisupport@olacabs.com
+      (Corporate) for quota increases.
+maintainers:
+  - FN: Kin Lane
+    email: kin@apievangelist.com

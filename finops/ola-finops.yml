@@ -1,0 +1,119 @@
+specification: FinOps Framework
+specificationVersion: '1.0'
+schema: https://www.finops.org/framework/
+provider: Ola
+providerId: ola
+created: '2026-06-13'
+modified: '2026-06-13'
+reconciled: false
+tags:
+  - Ride-Sharing
+  - Maps
+  - Transportation
+  - FinOps
+  - FOCUS
+  - India
+description: >-
+  FOCUS-aligned FinOps for Ola's two developer tracks: (1) Ola Maps — self-serve, usage-based
+  geospatial APIs with a free monthly tier and metered overage billing priced competitively
+  against Google Maps; (2) Ola Ride and Corporate APIs — partner/enterprise agreements with
+  undisclosed per-call or revenue-share pricing governed by affiliate contracts. Spend visibility
+  for Ola Maps flows through Krutrim Cloud dashboard usage meters; Corporate ride spend is tracked
+  via the Ola Corporate reporting dashboard and invoice downloads.
+notes: >-
+  Ola Maps pricing is publicly documented (free up to 5M calls/month promotional; overage billed
+  per-call at ~50% of Google Maps rates). Exact per-call costs require the pricing calculator at
+  maps.olakrutrim.com/pricing. Ride API and Corporate API costs are contract-driven and not
+  publicly published.
+sources:
+  - https://maps.olakrutrim.com/pricing
+  - https://tech.olakrutrim.com/ola-maps-made-for-india-priced-for-india/
+  - https://corporate.olacabs.com/docs/overview
+  - https://focus.finops.org/focus-specification/v1-3/
+alignedWith:
+  framework: FinOps Foundation Framework
+  frameworkUrl: https://www.finops.org/framework/
+  dataSpec: FOCUS
+  dataSpecVersion: '1.3'
+  dataSpecUrl: https://focus.finops.org/focus-specification/v1-3/
+publisherName: ANI Technologies Pvt. Ltd. (Ola) / Krutrim SI Designs Pvt. Ltd. (Ola Maps)
+serviceCategory: Mobility / Geospatial
+billingModel:
+  pricingCategory: Hybrid (Free Tier + Metered + Custom Contract)
+  billingFrequency: Monthly
+  billingCurrency: INR / USD
+  chargeCategories:
+    - Usage
+    - Purchase
+    - Tax
+    - Refund
+    - Adjustment
+focusColumns:
+  ServiceName: Ola Maps / Ola Ride APIs / Ola Corporate APIs
+  ServiceCategory: Mobility / Geospatial
+  ProviderName: Ola / Krutrim
+  PublisherName: ANI Technologies Pvt. Ltd. / Krutrim SI Designs Pvt. Ltd.
+  InvoiceIssuerName: Krutrim SI Designs Pvt. Ltd. (Maps) / ANI Technologies Pvt. Ltd. (Rides)
+  BillingCurrency: INR (primary) / USD
+meters:
+  - name: maps_api_calls
+    description: Total API calls made to Ola Maps endpoints (Routing, Geocoding, Places, Tiles, etc.)
+    unit: api_call
+    aggregation: sum
+    dimensions:
+      - api_category
+      - endpoint
+      - plan_tier
+  - name: maps_free_tier_calls
+    description: Ola Maps API calls consumed within the free monthly allowance
+    unit: api_call
+    aggregation: sum
+    dimensions:
+      - api_category
+  - name: maps_billable_calls
+    description: Ola Maps API calls above the free monthly threshold subject to per-call billing
+    unit: api_call
+    aggregation: sum
+    dimensions:
+      - api_category
+      - endpoint
+  - name: corporate_rides
+    description: Employee rides completed and tracked through the Ola Corporate platform
+    unit: ride
+    aggregation: sum
+    dimensions:
+      - city
+      - product_category
+      - expense_code
+  - name: corporate_users_managed
+    description: Number of corporate user records managed via the Corporate API
+    unit: user
+    aggregation: count
+    dimensions:
+      - department
+      - cost_center
+principles:
+  - name: Visibility
+    description: >-
+      Track Ola Maps API consumption via the Krutrim Cloud dashboard, which provides per-API
+      category usage counters and monthly totals. For Corporate rides, use the Ola Corporate
+      dashboard and the Download Invoice API to pull spend reports into finance systems.
+  - name: Allocation
+    description: >-
+      Allocate Ola Maps costs by tagging API requests with application or team identifiers at
+      the Krutrim Cloud project level. For Corporate rides, use Ola expense codes and cost
+      centers to attribute ride spend to business units.
+  - name: Optimization
+    description: >-
+      Implement client-side caching for geocoding and place details responses to reduce repeat
+      API calls. Use the Route Optimizer and Fleet Planner APIs to consolidate multiple routing
+      calls into single optimized requests. Monitor free-tier utilization monthly and upgrade
+      only when consistently exceeding the threshold.
+  - name: Accountability
+    description: >-
+      Engineering teams own Ola Maps API budget through Krutrim Cloud project spend alerts.
+      Travel managers govern Corporate ride spend via Ola Corporate policy controls, pre-ride
+      approval codes, and monthly invoice reconciliation.
+maintainers:
+  - FN: Kin Lane
+    email: kin@apievangelist.com

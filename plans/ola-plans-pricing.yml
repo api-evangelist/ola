@@ -1,0 +1,173 @@
+specification: API Commons Plans
+specificationVersion: '0.1'
+schema: https://raw.githubusercontent.com/api-evangelist/interface-research/main/schema/api-commons.yml#/$defs/Plans
+provider: Ola
+providerId: ola
+created: '2026-06-13'
+modified: '2026-06-13'
+reconciled: false
+tags:
+  - Ride-Sharing
+  - Maps
+  - Transportation
+  - India
+description: >-
+  Ola operates two distinct API access tracks. The Ola Consumer and Corporate Ride APIs are
+  invite-only for verified affiliates and enterprise partners — pricing and SLAs are negotiated
+  directly with Ola. The Ola Maps API is self-serve with a free tier of 500K API calls per month
+  (extended to 5M/month with 2025 promotional update covering 90%+ of Indian developers), usage-based
+  billing above the free threshold at rates approximately 50% below Google Maps' reduced pricing,
+  and special free commitments for ONDC platform users.
+notes: >-
+  Ola Ride API pricing is undisclosed (partner/enterprise agreement). Ola Maps published a
+  promotional pricing update in February 2025 offering 5M free calls/month. Exact per-call rates
+  above the free tier require a pricing calculator visit or contacting sales@olakrutrim.com.
+sources:
+  - https://maps.olakrutrim.com/pricing
+  - https://tech.olakrutrim.com/ola-maps-made-for-india-priced-for-india/
+  - https://developers.olacabs.com/docs/overview
+plans:
+  - id: ola-maps-free
+    name: Ola Maps Free Tier
+    type: free
+    description: >-
+      Self-serve free tier for Ola Maps APIs. Includes 500K API calls per month across all Ola
+      Maps services (Routing, Geocoding, Places, Tiles, etc.) at no cost. The first year is free
+      for new sign-ups; a 2025 promotional update extended this to 5M calls/month for developers
+      and startups.
+    entries:
+      - label: Monthly API Calls (Standard)
+        name: monthly_api_calls_standard
+        type: threshold
+        metric: api_call
+        limit: 500000
+        timeFrame: month
+        geo: global
+        unit: 1
+        price: 0
+        userMultiplied: false
+      - label: Monthly API Calls (Promotional)
+        name: monthly_api_calls_promotional
+        type: threshold
+        metric: api_call
+        limit: 5000000
+        timeFrame: month
+        geo: global
+        unit: 1
+        price: 0
+        userMultiplied: false
+    elements:
+      - name: Directions API
+      - name: Distance Matrix API
+      - name: Route Optimizer API
+      - name: Fleet Planner API
+      - name: Snap-to-Road API
+      - name: Speed Limits API
+      - name: Autocomplete API
+      - name: Nearby Place Search API
+      - name: Text Search API
+      - name: Place Details API
+      - name: Forward Geocoding
+      - name: Reverse Geocoding
+      - name: Map Tiles API
+  - id: ola-maps-usage
+    name: Ola Maps Pay-as-you-go
+    type: usage
+    description: >-
+      Usage-based billing for Ola Maps API calls exceeding the free monthly threshold. Rates are
+      priced at approximately 50% of Google Maps' reduced rates. Volume discounts apply for
+      customers with 10M+ monthly calls. Three-year commitment customers receive 2 years free.
+      ONDC platform startups and SMBs receive 3 years free.
+    entries:
+      - label: API Calls Above Free Tier
+        name: api_calls_overage
+        type: metered
+        metric: api_call
+        limit: -1
+        timeFrame: month
+        geo: global
+        unit: 1
+        price: contact sales for per-call rate
+        userMultiplied: false
+    elements:
+      - name: All Ola Maps APIs (usage-based)
+      - name: Volume discounts for 10M+ monthly calls
+      - name: 2 years free on 3-year commitment
+      - name: 3 years free for ONDC platform participants
+  - id: ola-maps-enterprise
+    name: Ola Maps Enterprise
+    type: enterprise
+    description: >-
+      Custom pricing for high-volume customers. Contact sales@olakrutrim.com for bespoke SLAs,
+      dedicated support, and negotiated per-call rates. Academic and NGO users can request
+      additional discounts.
+    entries:
+      - label: Custom Volume Pricing
+        name: custom_volume
+        type: flat
+        metric: varies
+        limit: -1
+        timeFrame: year
+        geo: global
+        unit: 1
+        price: contact sales
+        userMultiplied: false
+    elements:
+      - name: All Ola Maps APIs
+      - name: Dedicated account support
+      - name: Custom SLA
+      - name: Academic/NGO discount eligibility
+  - id: ola-ride-affiliate
+    name: Ola Ride API Partner (Invite-Only)
+    type: partner
+    description: >-
+      Access to the Ola Ride Booking, Tracking, and Management APIs is restricted to verified
+      affiliate and partner integrations. Developers must email affiliates@olacabs.com and submit
+      a complete integration flow for certification before receiving production credentials.
+      Pricing and revenue-share terms are negotiated per agreement.
+    entries:
+      - label: Custom Partner Agreement
+        name: custom_partner
+        type: flat
+        metric: varies
+        limit: -1
+        timeFrame: year
+        geo: global
+        unit: 1
+        price: contact affiliates@olacabs.com
+        userMultiplied: false
+    elements:
+      - name: Ride Availability and Estimate API
+      - name: Ride Booking API
+      - name: Ride Tracking API
+      - name: Ride Cancellation API
+      - name: Trip History API
+      - name: Webhooks
+      - name: Sandbox environment
+  - id: ola-corporate-enterprise
+    name: Ola Corporate API (Enterprise)
+    type: enterprise
+    description: >-
+      The Ola Corporate API is available to enterprises managing 100+ employees on the Ola
+      Corporate dashboard. Access is provisioned by Ola's corporate team. Pricing is part of
+      the corporate account agreement. Contact corp_apisupport@olacabs.com for onboarding.
+    entries:
+      - label: Custom Enterprise Agreement
+        name: custom_enterprise
+        type: flat
+        metric: varies
+        limit: -1
+        timeFrame: year
+        geo: global
+        unit: 1
+        price: contact corp_apisupport@olacabs.com
+        userMultiplied: false
+    elements:
+      - name: User Management APIs
+      - name: Ride Data APIs
+      - name: Invoice Download
+      - name: Expense Code Management APIs
+      - name: Bulk Operations
+maintainers:
+  - FN: Kin Lane
+    email: kin@apievangelist.com
