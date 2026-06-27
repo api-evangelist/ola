@@ -127,13 +127,13 @@ apis:
       - url: https://maps.olakrutrim.com/products
         type: Features
       - url: https://github.com/iSanjayAchar/ola-maps-node-sdk
-        type: SDK
+        type: SDKs
         title: Node.js SDK (Community)
       - url: https://github.com/lavvsharma/py_olamaps
-        type: SDK
+        type: SDKs
         title: Python SDK (Community)
       - url: https://pub.dev/packages/ola_maps
-        type: SDK
+        type: SDKs
         title: Flutter/Dart SDK (Community)
     description: >-
       Ola Maps is an AI-powered geospatial platform providing routing, geocoding, places search,
@@ -180,7 +180,7 @@ common:
     url: https://developers.olacabs.com/
   - type: Documentation
     url: https://developers.olacabs.com/docs/overview
-  - type: SignUp
+  - type: Signup
     url: https://developers.olacabs.com/login
   - type: Authentication
     url: https://developers.olacabs.com/docs/access-token

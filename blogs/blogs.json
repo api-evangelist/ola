@@ -2,11 +2,11 @@
   "repo": "ola",
   "feeds": [
     {
-      "source": "https://tech.olakrutrim.com/",
+      "source": "https://tech.olakrutrim.com/rss/",
       "feed_url": "https://tech.olakrutrim.com/rss/",
       "title": "",
       "saved": 0,
-      "method": "discovered"
+      "method": "feed"
     },
     {
       "source": "https://maps.olakrutrim.com/pricing",
@@ -17,5 +17,5 @@
     }
   ],
   "post_count": 0,
-  "fetched": "2026-06-14T20:42:17Z"
+  "fetched": "2026-06-27T12:03:07Z"
 }
