@@ -176,6 +176,8 @@ maintainers:
     email: kin@apievangelist.com
 specificationVersion: '0.19'
 common:
+  - type: DomainSecurity
+    url: security/ola-domain-security.yml
   - type: Portal
     url: https://developers.olacabs.com/
   - type: Documentation
