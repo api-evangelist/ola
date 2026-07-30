@@ -159,7 +159,19 @@ properties:
     type: RateLimits
   - url: finops/ola-finops.yml
     type: FinOps
-image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
+accessModel:
+  pricing: freemium
+  onboarding: approval
+  trial: false
+  try_now: false
+  public: false
+  label: Freemium · Requires approval
+  confidence: medium
+  source:
+  - plans
+  generated: '2026-07-22'
+  method: derived
+image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/icons/ola.png
 access: 3rd-Party
 created: '2026-06-13'
 modified: '2026-06-13'
