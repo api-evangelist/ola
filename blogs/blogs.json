@@ -3,21 +3,16 @@
   "feeds": [
     {
       "source": "https://tech.olakrutrim.com/rss/",
-      "feed_url": "https://tech.olakrutrim.com/rss/",
-      "title": "",
-      "saved": 0,
-      "method": "feed",
-      "error": "fetch_failed: URLError"
+      "error": "URLError"
     },
     {
       "source": "https://maps.olakrutrim.com/pricing",
       "feed_url": "https://maps.olakrutrim.com/pricing",
       "title": "",
       "saved": 0,
-      "method": "none",
-      "error": "parse_failed"
+      "method": "none"
     }
   ],
   "post_count": 11,
-  "fetched": "2026-08-15T12:11:08Z"
+  "fetched": "2026-08-22T20:20:02Z"
 }
