@@ -4,7 +4,7 @@ apis:
   - aid: ola:ola-ride-booking
     name: Ola Ride Booking API
     tags:
-      - Ridesharing
+      - Ride-Sharing
       - Ride Booking
       - Transportation
       - India
@@ -37,7 +37,7 @@ apis:
   - aid: ola:ola-ride-tracking
     name: Ola Ride Tracking API
     tags:
-      - Ridesharing
+      - Ride-Sharing
       - Driver Tracking
       - Real-Time
       - Transportation
@@ -71,7 +71,7 @@ apis:
   - aid: ola:ola-ride-management
     name: Ola Ride Management API
     tags:
-      - Ridesharing
+      - Ride-Sharing
       - Ride History
       - Cancellation
       - Feedback
@@ -161,7 +161,7 @@ apis:
       calls per month. Supports both API key and OAuth 2.0 authentication.
 name: Ola
 tags:
-  - Ridesharing
+  - Ride-Sharing
   - Transportation
   - Maps
   - Geocoding
