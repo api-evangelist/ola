@@ -211,7 +211,7 @@ image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/icons/ola.png
 access: 3rd-Party
 created: '2026-06-13'
 modified: '2026-06-13'
-position: Consumer
+position: Consuming
 description: >-
   Ola is India's leading ride-sharing and mobility platform operating across 100+ cities in India
   and international markets. Its developer ecosystem includes partner APIs for ride booking,
