@@ -163,6 +163,7 @@ tags:
 - Routing
 - Corporate Travel
 - India
+- Mobility
 tags_raw:
 - Ride-Sharing
 - Transportation
@@ -171,6 +172,7 @@ tags_raw:
 - Routing
 - Corporate Travel
 - India
+- Mobility
 type: Index
 properties:
 - url: plans/ola-plans-pricing.yml
