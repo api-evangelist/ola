@@ -4,7 +4,7 @@ apis:
 - aid: ola:ola-ride-booking
   name: Ola Ride Booking API
   tags:
-  - Ridesharing
+  - Ride Hailing
   - Ride Booking
   - Transportation
   - India
@@ -13,6 +13,7 @@ apis:
   - Ride Booking
   - Transportation
   - India
+  - Ridesharing
   humanURL: https://developers.olacabs.com/docs/overview
   baseURL: https://devapi.olacabs.com
   properties:
@@ -36,7 +37,7 @@ apis:
 - aid: ola:ola-ride-tracking
   name: Ola Ride Tracking API
   tags:
-  - Ridesharing
+  - Ride Hailing
   - Driver Tracking
   - Real-Time
   - Transportation
@@ -47,6 +48,7 @@ apis:
   - Real-Time
   - Transportation
   - India
+  - Ridesharing
   humanURL: https://developers.olacabs.com/docs/cab-track-ride
   baseURL: https://devapi.olacabs.com
   properties:
@@ -69,7 +71,7 @@ apis:
 - aid: ola:ola-ride-management
   name: Ola Ride Management API
   tags:
-  - Ridesharing
+  - Ride Hailing
   - Ride History
   - Cancellation
   - Feedback
@@ -80,6 +82,7 @@ apis:
   - Cancellation
   - Feedback
   - Transportation
+  - Ridesharing
   humanURL: https://developers.olacabs.com/docs/overview
   baseURL: https://devapi.olacabs.com
   properties:
@@ -156,7 +159,7 @@ apis:
     2.0 authentication.
 name: Ola
 tags:
-- Ridesharing
+- Ride Hailing
 - Transportation
 - Maps
 - Geocoding
@@ -173,6 +176,7 @@ tags_raw:
 - Corporate Travel
 - India
 - Mobility
+- Ridesharing
 type: Index
 properties:
 - url: plans/ola-plans-pricing.yml
