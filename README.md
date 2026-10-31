@@ -64,45 +64,114 @@
 > Full detail: **[Where this data comes from](https://apievangelist.com/about/where-our-data-comes-from)**
 <!-- API-EVANGELIST-PROVENANCE:END -->
 
-India's leading ride-sharing and mobility platform with developer APIs for ride booking, tracking, corporate travel management, and AI-powered geospatial services.
+Ola is India's leading ride-sharing and mobility platform operating across 100+ cities in India and international markets. Its developer ecosystem includes partner APIs for ride booking, real-time driver tracking, trip history, and corporate travel management, as well as the Ola Maps geospatial platform offering AI-powered routing, geocoding, places search, and navigation SDKs optimized for Indian roads and language support. Ride APIs are invite-only for affiliates; Ola Maps offers a self-serve free tier.
 
-**Developer Portal:** https://developers.olacabs.com/  
-**Ola Maps:** https://maps.olakrutrim.com/
+**Areas:** Ride Hailing · Transportation · Maps · Geocoding · Routing · Corporate Travel · India · Mobility
 
-## APIs
+## Ola on APIs.io
 
-| API | Description |
-|-----|-------------|
-| [Ola Ride Booking API](https://developers.olacabs.com/docs/overview) | Find, estimate fares, and book rides across 100+ Indian cities |
-| [Ola Ride Tracking API](https://developers.olacabs.com/docs/cab-track-ride) | Real-time driver location and booking status via polling or webhooks |
-| [Ola Ride Management API](https://developers.olacabs.com/docs/overview) | Trip history, cancellation, and feedback |
-| [Ola Corporate API](https://corporate.olacabs.com/docs/overview) | Enterprise user, ride, and expense code management |
-| [Ola Maps API](https://maps.olakrutrim.com/docs) | Routing, geocoding, places search, and map tiles optimized for India |
+Everything profiled for Ola is published on APIs.io rather than in this repository. Start at the provider page — **[apis.io/providers/ola/](https://apis.io/providers/ola/)** — or go straight to one of the APIs or properties below.
 
-## Authentication
+### APIs (5)
 
-- **Ride APIs:** OAuth 2.0 bearer tokens via Ola's login/signup flow (invite-only affiliate access)
-- **Corporate API:** `X-CORPORATE-TOKEN` header (issued by Ola corporate team)
-- **Ola Maps:** API key (query parameter) or OAuth 2.0 client credentials
+- [Ola Ride Booking API](https://apis.io/apis/ola/ola-ride-booking/) — The Ola Ride Booking API enables affiliates and partners to let users find, book, and manage Ola rides directly within their applications. It covers ride…
+- [Ola Ride Tracking API](https://apis.io/apis/ola/ola-ride-tracking/) — The Ola Ride Tracking API provides real-time location data for booked rides, including driver position, ETA to pickup, and in-trip tracking. It supports…
+- [Ola Ride Management API](https://apis.io/apis/ola/ola-ride-management/) — The Ola Ride Management API covers post-booking operations including trip history retrieval, ride cancellation with city-specific reason codes, and ride…
+- [Ola Corporate API](https://apis.io/apis/ola/ola-corporate/) — The Ola Corporate API enables large enterprises to automate employee and expense management on the Ola Corporate dashboard. It provides endpoints for user…
+- [Ola Maps API](https://apis.io/apis/ola/ola-maps/) — Ola Maps is an AI-powered geospatial platform providing routing, geocoding, places search, and map visualization APIs tuned for India. It offers Directions,…
 
-## Access
+### Published properties
 
-Ride APIs are **invite-only** — email affiliates@olacabs.com to request affiliate access and sandbox credentials. Ola Maps is **self-serve** via Krutrim Cloud (cloud.olakrutrim.com).
+Each property below is a page on APIs.io carrying the machine-readable artifact and what it says.
 
-## Pricing
+#### JSON-LD (1)
 
-- **Ola Maps:** Free up to 500K API calls/month (5M/month promotional); usage-based above threshold at ~50% of Google Maps rates
-- **Ride APIs:** Partner agreement (contact affiliates@olacabs.com)
-- **Corporate API:** Enterprise agreement (contact corp_apisupport@olacabs.com)
+Linked-data contexts for the provider's vocabulary.
 
-## Rate Limits
+- [Ola Context](https://apis.io/jsonld/ola/ola-context/)
 
-- **Corporate API:** 1,000 requests per minute; HTTP 429 on breach
-- **Ola Maps:** Monthly free-tier cap + per-minute throttle; HTTP 429 on breach
-- **Ride APIs:** Governed by partner agreement
+#### Security (1)
 
-## Support
+Authentication, trust centre, and vulnerability disclosure.
 
-- Ride API partners: affiliates@olacabs.com
-- Corporate API: corp_apisupport@olacabs.com
-- Ola Maps: support@olakrutrim.com | sales@olakrutrim.com
+- [Ola Domain Security](https://apis.io/security/ola/ola-domain-security/)
+
+#### Plans and pricing (1)
+
+Published plans, tiers and prices.
+
+- [Ola Plans Pricing](https://apis.io/plans/ola/ola-plans-pricing/)
+
+#### Rate limits (1)
+
+Published request limits.
+
+- [Ola Rate Limits](https://apis.io/rate-limits/ola/ola-rate-limits/)
+
+#### FinOps (1)
+
+What the API costs to run, by operation.
+
+- [Ola Finops](https://apis.io/finops/ola/ola-finops/)
+
+## Where to find this API
+
+Links to the company's own pages. This repository publishes no copy of their specifications — the canonical document is theirs and lives at the URLs below.
+
+- [Website](https://olacabs.com)
+- [Documentation](https://developers.olacabs.com/docs/overview)
+- [Pricing](https://maps.olakrutrim.com/pricing)
+- [Blog](https://tech.olakrutrim.com/)
+
+## API Evangelist rating
+
+**Kin Score 27.4** — thin · rubric 0.24.0 · scored 2026-10-17
+
+| Facet | Score |
+|---|---|
+| Discoverability | 71.4 |
+| Contract quality | 14.3 |
+| Contract governance | 0.0 |
+| Operational transparency | 11.8 |
+| Developer ergonomics | 42.9 |
+| Access clarity | 31.6 |
+
+**Agent readiness 8.9** — agent-aware
+
+| Agent-readiness dimension | Result |
+|---|---|
+| Spec Presence | — |
+| Agentic Access | — |
+| Reversibility Documented | — |
+| MCP Server | — |
+| Auth Clarity | bearer (partial credit) |
+| Idempotency | — |
+| Error Semantics | — |
+| OpenAPI Examples | — |
+| Rate Limit Signal | documented (partial credit) |
+| Event Surface Described | unknown |
+| Agent Skills | — |
+| Well Known Catalog | — |
+| Consent Identity | — |
+| Agent Card | — |
+| Dry Run Mode | — |
+| Delegated Identity | — |
+| Protected Resource Metadata | — |
+| Dynamic Client Registration | — |
+| Agentic Commerce | — |
+
+**Regulatory alignment 16.7** — Horizontal (data, software, accessibility, platform)
+
+The rubric is published at [github.com/api-evangelist/kin-score](https://github.com/api-evangelist/kin-score). The per-check breakdown behind these numbers — which checks were earned, partial or missed — along with score history and how this provider compares to its peers, is available at [apis.io/providers/ola/](https://apis.io/providers/ola/).
+
+## How this profile is made
+
+API Evangelist profiles a company's public API surface the way a developer would find it: the website, developer portal and documentation, the specifications it publishes, its public repositories, and its pricing, status and changelog pages. From that it derives the properties above — contracts split per API, workflows, schemas, collections, governance rules, plans and rate limits — and scores them against the published [Kin Score rubric](https://github.com/api-evangelist/kin-score).
+
+The artifacts are published on [APIs.io](https://apis.io), not in this repository. This repository is the public record for Ola: the place to say something is wrong, missing or out of date, and to ask for a re-score or a removal.
+
+## Open an issue
+
+- **Something about this listing** — a wrong description, a missing API, a stale artifact or a question about the rating: [open an issue on this repository](https://github.com/api-evangelist/ola/issues/new).
+- **A new API, or one that is not in the catalog yet** — [submit it on APIs.io](https://apis.io/add/).
+- **Anything else** — [the APIs.io inbox](https://github.com/api-search/inbox/issues/new) or [info@apievangelist.com](mailto:info@apievangelist.com).
